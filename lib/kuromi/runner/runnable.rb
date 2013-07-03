@@ -5,7 +5,7 @@ module Kuromi
     module Runnable
       def run
         Open3.popen3(self.to_s) do |sin, sout, serr, thr|
-          return Output.new(thr.value)
+          return Output.new(thr.value, sout.read)
         end
       end
     end

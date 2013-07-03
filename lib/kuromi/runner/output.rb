@@ -1,8 +1,11 @@
 module Kuromi
   class Runner
     class Output
-      def initialize(code)
+      attr_reader :stdout, :code
+
+      def initialize(code, stdout)
         @code = code
+        @stdout = stdout
       end
     end
   end
