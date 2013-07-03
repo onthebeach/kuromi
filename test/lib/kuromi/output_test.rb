@@ -5,7 +5,7 @@ module Kuromi
     it "is returned from a Runner object" do
       Open3.expects(:popen3).yields(stub,
                                     stub(read: nil),
-                                    stub,
+                                    stub(read: nil),
                                     stub(value: 0))
 
       output = Runner.for('ps').run
@@ -22,6 +22,7 @@ module Kuromi
 
     it "puts the stdout stream in the output object" do
       stdout.expects(:read).returns('hitomi')
+      stderr.stubs(:read)
       Open3.expects(:popen3).yields(stdin, stdout, stderr, stub(:value => 0))
 
       subject.stdout.must_equal 'hitomi'
@@ -29,9 +30,18 @@ module Kuromi
 
     it "puts the exit code in the output object" do
       stdout.stubs(:read)
+      stderr.stubs(:read)
       Open3.expects(:popen3).yields(stdin, stdout, stderr, stub(:value => 0))
 
       subject.code.must_equal 0
+    end
+
+    it "puts the stderr stream in the output object" do
+      stdout.stubs(:read)
+      stderr.expects(:read).returns('ERR: Panic')
+      Open3.expects(:popen3).yields(stdin, stdout, stderr, stub(:value => 1))
+
+      subject.stderr.must_equal 'ERR: Panic'
     end
   end
 
