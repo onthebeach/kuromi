@@ -43,6 +43,24 @@ module Kuromi
 
       subject.stderr.must_equal 'ERR: Panic'
     end
+
+    it "reports success and failure" do
+      Open3.expects(:popen3).yields(stub,
+                                    stub(read: nil),
+                                    stub(read: nil),
+                                    stub(value: 0))
+
+      subject.success?.must_equal true
+    end
+
+    it "reports failure" do
+      Open3.expects(:popen3).yields(stub,
+                                    stub(read: nil),
+                                    stub(read: nil),
+                                    stub(value: 1))
+
+      subject.success?.must_equal false
+    end
   end
 
 end

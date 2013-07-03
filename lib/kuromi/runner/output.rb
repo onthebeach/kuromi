@@ -8,6 +8,10 @@ module Kuromi
         @stdout = stdout
         @stderr = stderr
       end
+
+      def success?
+        @code == 0
+      end
     end
   end
 end
