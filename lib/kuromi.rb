@@ -1,3 +1,5 @@
+require "optional"
+
 require "kuromi/runner"
 require "kuromi/version"
 

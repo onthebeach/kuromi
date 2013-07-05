@@ -5,8 +5,8 @@ module Kuromi
 
       def initialize(code, stdout, stderr)
         @code = code
-        @stdout = stdout
-        @stderr = stderr
+        @stdout = Option[stdout]
+        @stderr = Option[stderr]
       end
 
       def success?

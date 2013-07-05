@@ -1,6 +1,6 @@
 module Kuromi
   class Runner
-    class Option
+    class OptionValue
       include Runnable
       include Options
 

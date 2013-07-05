@@ -2,7 +2,7 @@ module Kuromi
   class Runner
     module Options
       def with(option, value=nil)
-        Option.new(self, option, value)
+        OptionValue.new(self, option, value)
       end
 
       alias_method :and, :with

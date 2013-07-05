@@ -25,7 +25,7 @@ module Kuromi
       stderr.stubs(:read)
       Open3.expects(:popen3).yields(stdin, stdout, stderr, stub(:value => 0))
 
-      subject.stdout.must_equal 'hitomi'
+      subject.stdout.must_equal Some['hitomi']
     end
 
     it "puts the exit code in the output object" do
@@ -41,7 +41,7 @@ module Kuromi
       stderr.expects(:read).returns('ERR: Panic')
       Open3.expects(:popen3).yields(stdin, stdout, stderr, stub(:value => 1))
 
-      subject.stderr.must_equal 'ERR: Panic'
+      subject.stderr.must_equal Some['ERR: Panic']
     end
 
     it "reports success and failure" do
