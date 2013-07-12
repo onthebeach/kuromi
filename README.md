@@ -45,4 +45,12 @@ You can pass extra arguments and build up command line chains with Kuromi using 
 
 ## Contributing
 
-Pull requests are welcomed,
+Pull requests are welcome. Please ensure they're tested or we may reject them.
+
+Run the tests as follows
+
+    bundle exec rake
+
+or with coverage
+
+    COVERAGE=true bundle exec rake
