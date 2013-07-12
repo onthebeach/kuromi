@@ -1,5 +1,7 @@
 # Kuromi
 
+[![Build Status](https://travis-ci.org/onthebeach/kuromi.png)](https://travis-ci.org/onthebeach/kuromi)
+
 Kuromi is a command runner and a pretty DSL around your command line. It's basically a nice friendly way to interact with `Open3#popen3` from the standard library
 
 ## Installation
