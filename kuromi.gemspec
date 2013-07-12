@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["matt@eightbitraptor.com"]
   spec.description   = %q{Kuromi is an application runner}
   spec.summary       = %q{Kuromi provides a DSL for running command lines in Ruby}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/onthebeach/kuromi"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
