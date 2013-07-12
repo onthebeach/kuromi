@@ -44,7 +44,6 @@ You can pass extra arguments and build up command line chains with Kuromi using 
 ## TODO
 
 * Kuromi is synchronous - it will block while your command is being executed.
-* Optional
 
 ## Contributing
 
