@@ -1,4 +1,4 @@
-Copyright (c) 2013 Matt House
+Copyright (c) 2013 On The Beach LTD
 
 MIT License
 
